@@ -97,8 +97,6 @@ public class PlayerController : MonoBehaviour
 
   private void StartJump()
   {
-    print("jump");
-
     StopJump();
     jumpCoroutine = StartCoroutine(Jump());
   }
