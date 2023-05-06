@@ -8,7 +8,9 @@ public class LevelBounds : MonoBehaviour
 {
   private void OnTriggerExit2D(Collider2D other)
   {
-    // Reset level
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    // Kill character
+    Health health = other.GetComponent<Health>();
+
+    if (health != null) health.Kill();
   }
 }
