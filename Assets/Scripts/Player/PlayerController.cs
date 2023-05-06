@@ -69,11 +69,11 @@ public class PlayerController : MonoBehaviour
   // Adjust gravity scale: lower when rising in the air
   void AdjustGravityScale()
   {
-    if (body.velocity.y > 0 && body.gravityScale == initialGravity)
-      body.gravityScale = initialGravity * raisingGravityModifier;
+    if (body.velocity.y > 0 && Mathf.Abs(body.gravityScale) == initialGravity)
+      body.gravityScale = initialGravity * raisingGravityModifier * Mathf.Sign(body.gravityScale);
 
-    else if (body.velocity.y < 0 && body.gravityScale != initialGravity)
-      body.gravityScale = initialGravity;
+    else if (body.velocity.y < 0 && Mathf.Abs(body.gravityScale) != initialGravity)
+      body.gravityScale = initialGravity * Mathf.Sign(body.gravityScale);
   }
 
   IEnumerator Jump()

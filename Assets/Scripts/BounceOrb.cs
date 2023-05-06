@@ -6,7 +6,7 @@ using UnityEngine;
 public class BounceOrb : MonoBehaviour
 {
   // === BOUNCE
-  [Header("Bounce")]
+  [Header("BOUNCE")]
 
   [Tooltip("Force to apply upwards on contact")]
   public float bounceImpulse = 10f;
