@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour
   // === JUMPING
   [Header("JUMPING")]
 
+  [Tooltip("Jumpable surface")]
+  public LayerMask jumpableSurface;
+
   [Tooltip("Force of jump")]
   public float jumpForce = 10f;
 
@@ -95,8 +98,15 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+  bool CanJump()
+  {
+    return Physics2D.Raycast(transform.position, Vector2.down, 0.5f, jumpableSurface).collider != null;
+  }
+
   private void StartJump()
   {
+    if (CanJump() == false) return;
+
     StopJump();
     jumpCoroutine = StartCoroutine(Jump());
   }

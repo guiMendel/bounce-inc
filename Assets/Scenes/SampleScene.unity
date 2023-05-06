@@ -887,6 +887,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6640159247041724755, guid: 72a7db137eec2554ab7d5e49e61eedb9, type: 3}
+      propertyPath: jumpableSurface.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640159247041724755, guid: 72a7db137eec2554ab7d5e49e61eedb9, type: 3}
       propertyPath: raisingGravityModifier
       value: 0.8
       objectReference: {fileID: 0}
